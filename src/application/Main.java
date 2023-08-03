@@ -17,20 +17,28 @@ public class Main {
 		list.add("Ronaldo");
 		list.add("Neymar");
 		
-		for(String nome: list) {
-			System.out.println(nome);
+		for(String name: list) {
+			System.out.println(name);
 		}
+		System.out.println("--------------");
+		
+		System.out.print("Wich name do you want to delete? -> ");
+		String nameToRemove = scan.next();
+		list.remove(nameToRemove);
 		System.out.println();
 		
-		System.out.print("Digite o nome que deseja deletar: ");
-		String nomeToRemove = scan.next();
-		list.remove(nomeToRemove);
-		System.out.println();
-		
-		for(String nome: list) {
-			System.out.println(nome);
+		for(String name: list) {
+			System.out.println(name);
 		}
+		System.out.println("--------------");
 
+		list.removeIf(x -> x.charAt(0) == 'M');
+		
+		System.out.println("List without names initiated with 'M':\n");
+		for(String name: list) {
+			System.out.println(name);
+		}
+		System.out.println("--------------");
 	}
 
 }
